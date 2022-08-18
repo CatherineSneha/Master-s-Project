@@ -33,18 +33,18 @@ Adafruit_PM25AQI aqi = Adafruit_PM25AQI();
 
 int sensorValue;
 
-const char * ssid = "SKY3CB4B";    //  your network SSID (name)
-const char * pass = "XYDNXBPCMS";   // your network password
+//const char * ssid = "SKY3CB4B";    //  your network SSID (name)
+//const char * pass = "XYDNXBPCMS";   // your network password
 
-//const char * ssid = "VM8739088";    //  your network SSID (name)
-//const char * pass = "x524870!";   // your network password
+const char * ssid = "VM8739088";    //  your network SSID (name)
+const char * pass = "x524870!";   // your network password
 
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
 
 WiFiClient  client;
 
 bool networkInitialized = false;
-bool bleModeFlag = true;
+bool bleModeFlag = false;
 
 unsigned long myChannelNumber = 1802514;
 const char * myWriteAPIKey = "7ORCT79IQ81GV518";
@@ -61,7 +61,7 @@ void setup() {
   // Wait for serial monitor to open
   Serial.begin(115200);
   while (!Serial) delay(10);
-
+  //pinMode(A0, INPUT);
   // set built in LED pin to output mode
   pinMode(LED_BUILTIN, OUTPUT);
   String fv = WiFi.firmwareVersion();
@@ -337,6 +337,7 @@ void readSensor() {
   Serial.println(F("---------------------------------------"));
   Serial.println(F("Concentration Units (standard)"));
   Serial.print("MQ135 Sensor  ");
+  Serial.println(sensorValue);   
   Serial.print(sensorValue, DEC);               // prints the value read
   Serial.println(" PPM");
   delay(100);
@@ -380,7 +381,10 @@ void readSensor() {
   }
 
   //AQI Calculation
-  long AQI = (data.pm10_env + data.pm25_env + data.pm100_env) / (3 * 3600) ;
+  long mqAQI = ((sensorValue/400)*100);
+  Serial.println("MQ 135 AQI");
+  Serial.println(mqAQI);
+  long AQI = (((data.pm10_env + data.pm25_env + data.pm100_env) / (3 * 3600))+((sensorValue/400)*100))/2 ;
   Serial.print("AQI: "); Serial.println(AQI);
   int z = ThingSpeak.writeField(myChannelNumber2, 1, AQI , myWriteAPIKey2);
   if (z == 200) {
