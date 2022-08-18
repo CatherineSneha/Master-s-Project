@@ -1,0 +1,321 @@
+body {
+    font-family: "Montserrat";
+    text-align: center;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat-Bold";
+}
+
+p {
+    color: #8f8f8f;
+}
+
+/* Headings */
+
+.big-heading {
+    font-family: "Montserrat-Black";
+    font-size: 2.2rem;
+    line-height: 1.5;
+}
+
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+/* Containers */
+
+.container-fluid {
+    padding: 7% 15%;
+}
+
+/* Sections */
+
+.coloured-section {
+    background-color: #ff4c68;
+    color: #fff;
+}
+
+.white-section {
+    background-color: #fff;
+
+}
+
+/* Navigation Bar */
+.navbar {
+    padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.3rem;
+    font-family: "Montserrat-light";
+    transform: translateX(var(--link-translate-x));
+}
+
+/* Open button */
+.nav-toggler {
+	background: #ff4c68;
+	outline: 0;
+	padding: 8px 15px;
+	color: #fff;
+	border: 0;
+	border-radius: 5px;
+	font-size: 2em;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+	transition: 0.15s ease-in-out;
+	cursor: pointer;
+}
+.nav-toggler:hover {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Nav position and opening class */
+.open-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Backgroup position and animation */
+.backdrop {
+	position: relative;
+	width: 100%;
+	height: 100%;
+    display:flexbox;
+    align-content: center;
+    justify-content: center;
+	background: #ff4c68;
+	cursor: pointer;
+	animation: fadeIn 0.2s ease-in-out forwards;
+    
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* List item styling & animation */
+
+@keyframes animateList {
+	from {
+		margin-top: -60px;
+		opacity: 0;
+	}
+	to {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+
+/* Item links styles and hover effect*/
+ul li a {
+	text-decoration:none;
+	color: #ccc;
+	font-size: 3em;
+	font-weight: 900;
+	text-transform: uppercase;
+	transition: 0.15s ease-in-out;
+}
+ul li a:hover,
+ul li a i {
+	color: #c53d6a;
+}
+
+/* Download Buttons */
+.download-button {
+    margin: 5% 3% 5% 0;
+}
+
+/* Title Section */
+
+#title .container-fluid {
+    padding: 1% 15% 4%;
+    text-align: left;
+}
+
+/* Title Image */
+.title-image {
+    width: 50%; 
+    transform: rotate(25deg); 
+    position: absolute;
+    right: 30%;
+}
+
+/* Features Section */
+#features {
+    background-color: #fff;
+    position: relative;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: bold;    
+}
+
+.feature-box {
+    padding: 5%;
+}
+
+.icon {
+    color: #ef8172;
+    margin-bottom: 1rem;
+}
+
+.icon:hover {
+    color: #ff4c68;
+}
+
+/* Testimonials Section  */
+
+#testimonials {
+    background-color: #ef8172;
+}
+
+.testimonial-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.testimonial-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+/*Report and Dashboard Section*/
+.report-title {
+    font-size: 3.5rem;
+    font-weight: bold;    
+}
+
+#press {
+    background-color: #ef8172;
+    padding-bottom: 3%;
+}
+
+.press-logo {
+    width: 15%;
+    margin: 20px 20px 50px;
+}
+
+/* Pricing Section  */
+
+#pricing {
+    padding: 100px;
+}
+
+.price-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.pricing-column {
+    padding: 3% 2%;
+}
+
+/* Login Section */
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+/* Footer section */
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+/* Sign Up Section*/
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 0px;
+    margin: 0 auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .mb-3 {
+    display: block;
+    width: 100%;
+    padding: 0rem 25rem 0rem 25rem;
+}
+
+.form-row {
+    display: block;
+    width: 100%;
+    padding: 0rem 25rem 0rem 25rem;
+}
+/* FAQ Section */
+
+.accordion{
+    padding: 0rem 15rem 0rem 15rem;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+tr:nth-child(even) {
+    background-color: #d3c0c6;
+  }
+
+@media (max-width: 1028px) {
+
+    #title {
+        text-align: center;
+    }
+    .title-image {
+        position: static;
+        transform: rotate(0);
+    }
+    .h-custom {
+        height: 100%;
+      }
+}
+
