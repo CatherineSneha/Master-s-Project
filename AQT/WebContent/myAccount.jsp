@@ -107,13 +107,28 @@
 			<br> <br>
 			<h2 class="report-title">PM 2.5</h2>
 			<br>
-			<iframe width="550" height="375" style="border: 1px solid #cccccc;"
-				src="https://thingspeak.com/channels/1802514/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+			<c:forEach var="row" items="${result.rows}">
+				<h2>
+					AIR QUALITY PM Value :
+					<c:out value="${row.PM_DAILY}" />
+				</h2>
+			</c:forEach>
 			<br> <br>
-			<h2 class="report-title">MQ 135</h2>
 			<br>
 			<iframe width="550" height="375" style="border: 1px solid #cccccc;"
 				src="https://thingspeak.com/channels/1803338/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+			<br> <br>
+			<h2 class="report-title">MQ 135</h2>
+			<c:forEach var="row" items="${result.rows}">
+				<h2>
+					AIR QUALITY CO2 Value :
+					<c:out value="${row.CO2_DAILY}" />
+				</h2>
+			</c:forEach>
+			<br> <br>
+			<br>
+			<iframe width="550" height="375" style="border: 1px solid #cccccc;"
+				src="https://thingspeak.com/channels/1802514/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
 			<br> <img src="images/report.jpg" alt="Report" width="340"
 				height="340">
 		</div>
